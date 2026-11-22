@@ -1,0 +1,4245 @@
+[
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "error": {
+        "code": "UNAUTHENTICATED",
+        "details": [],
+        "message": "Unauthorized"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 401
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "error": {
+        "code": "ORIGIN_FORBIDDEN",
+        "details": [],
+        "message": "Forbidden"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 403
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "a562c641-c800-4e41-8754-44231e929f1d"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/me",
+    "request": null,
+    "response": {
+      "data": {
+        "display_name": null,
+        "id": "a562c641-c800-4e41-8754-44231e929f1d",
+        "onboarding_completed": false,
+        "preferred_platform_codes": [],
+        "timezone": "Asia/Bangkok"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "ORIGIN_FORBIDDEN",
+        "details": [],
+        "message": "Forbidden"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 403
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/me",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "UNAUTHENTICATED",
+        "details": [],
+        "message": "Unauthorized"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 401
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "a562c641-c800-4e41-8754-44231e929f1d"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/me",
+    "request": null,
+    "response": {
+      "data": {
+        "display_name": null,
+        "id": "a562c641-c800-4e41-8754-44231e929f1d",
+        "onboarding_completed": false,
+        "preferred_platform_codes": [],
+        "timezone": "Asia/Bangkok"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/logout",
+    "request": null,
+    "response": {},
+    "set_cookie_present": true,
+    "status": 204
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/me",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "UNAUTHENTICATED",
+        "details": [],
+        "message": "Unauthorized"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 401
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "UNAUTHENTICATED",
+        "details": [],
+        "message": "Unauthorized"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 401
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/logout",
+    "request": null,
+    "response": {},
+    "set_cookie_present": true,
+    "status": 204
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "a562c641-c800-4e41-8754-44231e929f1d"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "UNAUTHENTICATED",
+        "details": [],
+        "message": "Unauthorized"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 401
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/me",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "UNAUTHENTICATED",
+        "details": [],
+        "message": "Unauthorized"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 401
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "ffe37064-842a-4619-9e67-eecd3391e4f3"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "2a985155-7570-45b4-91e8-de9dc9523ba3"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "35.00",
+        "id": "d8f3fe2f-111c-46d6-8e20-6c5115ab0d3a",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "error": {
+        "code": "VEHICLE_EXISTS",
+        "details": [],
+        "message": "Conflict"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 409
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/vehicles/d8f3fe2f-111c-46d6-8e20-6c5115ab0d3a",
+    "request": {
+      "name": "stolen"
+    },
+    "response": {
+      "error": {
+        "code": "NOT_FOUND",
+        "details": [],
+        "message": "Not Found"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 404
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/vehicles/d8f3fe2f-111c-46d6-8e20-6c5115ab0d3a",
+    "request": {
+      "fuel_price_per_liter": "36.00"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "36.00",
+        "id": "d8f3fe2f-111c-46d6-8e20-6c5115ab0d3a",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PUT",
+    "path": "/api/v1/me/profile",
+    "request": {
+      "display_name": "Rider A",
+      "preferred_platform_codes": [
+        "grab",
+        "lineman"
+      ],
+      "timezone": "Asia/Bangkok"
+    },
+    "response": {
+      "data": {
+        "display_name": "Rider A",
+        "id": "ffe37064-842a-4619-9e67-eecd3391e4f3",
+        "onboarding_completed": true,
+        "preferred_platform_codes": [
+          "grab",
+          "lineman"
+        ],
+        "timezone": "Asia/Bangkok"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/vehicles",
+    "request": null,
+    "response": {
+      "data": []
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/platforms",
+    "request": null,
+    "response": {
+      "data": [
+        {
+          "code": "grab",
+          "name": "Grab"
+        },
+        {
+          "code": "lineman",
+          "name": "LINE MAN"
+        },
+        {
+          "code": "other",
+          "name": "Other"
+        },
+        {
+          "code": "shopeefood",
+          "name": "ShopeeFood"
+        }
+      ]
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/me/profile",
+    "request": null,
+    "response": {
+      "data": {
+        "display_name": "Rider A",
+        "id": "ffe37064-842a-4619-9e67-eecd3391e4f3",
+        "onboarding_completed": true,
+        "preferred_platform_codes": [
+          "grab",
+          "lineman"
+        ],
+        "timezone": "Asia/Bangkok"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/vehicles",
+    "request": null,
+    "response": {
+      "data": [
+        {
+          "fuel_price_per_liter": "36.00",
+          "id": "d8f3fe2f-111c-46d6-8e20-6c5115ab0d3a",
+          "is_default": true,
+          "km_per_liter": "40.000",
+          "maintenance_reserve_per_km": "0.600",
+          "name": "Test bike"
+        }
+      ]
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PUT",
+    "path": "/api/v1/me/profile",
+    "request": {
+      "display_name": "Rider A",
+      "preferred_platform_codes": [
+        "grab",
+        "grab"
+      ],
+      "timezone": "Asia/Bangkok"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "preferred_platform_codes",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/vehicles/d8f3fe2f-111c-46d6-8e20-6c5115ab0d3a",
+    "request": {},
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "body",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/vehicles/d8f3fe2f-111c-46d6-8e20-6c5115ab0d3a",
+    "request": {
+      "name": null
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "name",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/vehicles/d8f3fe2f-111c-46d6-8e20-6c5115ab0d3a",
+    "request": {
+      "km_per_liter": "0"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "km_per_liter",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/vehicles/d8f3fe2f-111c-46d6-8e20-6c5115ab0d3a",
+    "request": {
+      "fuel_price_per_liter": 3
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "fuel_price_per_liter",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/vehicles/d8f3fe2f-111c-46d6-8e20-6c5115ab0d3a",
+    "request": {
+      "is_default": false
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "is_default",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "466efe39-d836-4cd8-b7d0-dc906f5fe9a1"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "e08542dd-c315-4229-bf56-baa2957ce44e"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "35.00",
+        "id": "b2b33454-3829-4bfc-9d7c-13b19f85d962",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "b2b33454-3829-4bfc-9d7c-13b19f85d962",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "b2b33454-3829-4bfc-9d7c-13b19f85d962",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "98905c32-c2da-4d04-9e07-43b417fa1eca",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/sessions/98905c32-c2da-4d04-9e07-43b417fa1eca",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "NOT_FOUND",
+        "details": [],
+        "message": "Not Found"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 404
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "b2b33454-3829-4bfc-9d7c-13b19f85d962",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "NOT_FOUND",
+        "details": [],
+        "message": "Not Found"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 404
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/sessions/98905c32-c2da-4d04-9e07-43b417fa1eca",
+    "request": {
+      "note": "steal"
+    },
+    "response": {
+      "error": {
+        "code": "NOT_FOUND",
+        "details": [],
+        "message": "Not Found"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 404
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/sessions/98905c32-c2da-4d04-9e07-43b417fa1eca",
+    "request": null,
+    "response": {
+      "data": {
+        "distance_km": "100.00",
+        "expenses": [
+          {
+            "amount": "30.00",
+            "category": "parking",
+            "note": ""
+          }
+        ],
+        "id": "98905c32-c2da-4d04-9e07-43b417fa1eca",
+        "incomes": [
+          {
+            "gross_income": "850.00",
+            "platform_code": "grab"
+          }
+        ],
+        "note": "",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "vehicle_id": "b2b33454-3829-4bfc-9d7c-13b19f85d962",
+        "version": 1,
+        "work_date": "2026-11-21",
+        "working_hours": "8.00"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "b2b33454-3829-4bfc-9d7c-13b19f85d962",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "SESSION_DATE_EXISTS",
+        "details": [
+          {
+            "session_id": "98905c32-c2da-4d04-9e07-43b417fa1eca"
+          }
+        ],
+        "message": "Conflict"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 409
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "466efe39-d836-4cd8-b7d0-dc906f5fe9a1"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "b2b33454-3829-4bfc-9d7c-13b19f85d962",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "98905c32-c2da-4d04-9e07-43b417fa1eca",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "changed",
+      "vehicle_id": "b2b33454-3829-4bfc-9d7c-13b19f85d962",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "IDEMPOTENCY_KEY_REUSED",
+        "details": [],
+        "message": "Conflict"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 409
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/vehicles/b2b33454-3829-4bfc-9d7c-13b19f85d962",
+    "request": {
+      "fuel_price_per_liter": "70.00"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "70.00",
+        "id": "b2b33454-3829-4bfc-9d7c-13b19f85d962",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/98905c32-c2da-4d04-9e07-43b417fa1eca/preview",
+    "request": {
+      "working_hours": "4.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "168.13",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "4.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/sessions/98905c32-c2da-4d04-9e07-43b417fa1eca",
+    "request": {
+      "working_hours": "4.00"
+    },
+    "response": {
+      "data": {
+        "id": "98905c32-c2da-4d04-9e07-43b417fa1eca",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "168.13",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "4.00"
+        },
+        "version": 2
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/sessions/98905c32-c2da-4d04-9e07-43b417fa1eca",
+    "request": {
+      "work_date": "2026-11-20"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "work_date",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/sessions?from=2026-11-21\u0026to=2026-11-21\u0026page=1\u0026page_size=1",
+    "request": null,
+    "response": {
+      "data": [
+        {
+          "distance_km": "100.00",
+          "expenses": [
+            {
+              "amount": "30.00",
+              "category": "parking",
+              "note": ""
+            }
+          ],
+          "id": "98905c32-c2da-4d04-9e07-43b417fa1eca",
+          "incomes": [
+            {
+              "gross_income": "850.00",
+              "platform_code": "grab"
+            }
+          ],
+          "note": "",
+          "summary": {
+            "costs": {
+              "fuel_estimated": "87.50",
+              "maintenance_reserve": "60.00",
+              "other_actual": "30.00"
+            },
+            "currency": "THB",
+            "date": "2026-11-21",
+            "distance_km": "100.00",
+            "estimated_net_per_hour": "168.13",
+            "estimated_net_per_km": "6.73",
+            "estimated_net_profit": "672.50",
+            "gross_income": "850.00",
+            "total_cost": "177.50",
+            "working_hours": "4.00"
+          },
+          "vehicle_id": "b2b33454-3829-4bfc-9d7c-13b19f85d962",
+          "version": 2,
+          "work_date": "2026-11-21",
+          "working_hours": "4.00"
+        }
+      ],
+      "meta": {
+        "has_more": false,
+        "page": 1,
+        "page_size": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/reports/daily?date=2026-11-20",
+    "request": null,
+    "response": {
+      "data": null
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "1ebdfdf1-57a1-4b14-a90f-78e5caa9c357"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "35.00",
+        "id": "e53f1272-de74-4091-ad19-8f8a85aba763",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "e53f1272-de74-4091-ad19-8f8a85aba763",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "e53f1272-de74-4091-ad19-8f8a85aba763",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "454e8107-fbd4-4f82-86d7-e6612d2e019e",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "e53f1272-de74-4091-ad19-8f8a85aba763",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "454e8107-fbd4-4f82-86d7-e6612d2e019e",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "e53f1272-de74-4091-ad19-8f8a85aba763",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "454e8107-fbd4-4f82-86d7-e6612d2e019e",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "e53f1272-de74-4091-ad19-8f8a85aba763",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "454e8107-fbd4-4f82-86d7-e6612d2e019e",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "e53f1272-de74-4091-ad19-8f8a85aba763",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "454e8107-fbd4-4f82-86d7-e6612d2e019e",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "e53f1272-de74-4091-ad19-8f8a85aba763",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "454e8107-fbd4-4f82-86d7-e6612d2e019e",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/454e8107-fbd4-4f82-86d7-e6612d2e019e/preview",
+    "request": {
+      "note": "edit"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/sessions/454e8107-fbd4-4f82-86d7-e6612d2e019e",
+    "request": {
+      "note": "edit"
+    },
+    "response": {
+      "data": {
+        "id": "454e8107-fbd4-4f82-86d7-e6612d2e019e",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 2
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/sessions/454e8107-fbd4-4f82-86d7-e6612d2e019e",
+    "request": {
+      "note": "edit"
+    },
+    "response": {
+      "error": {
+        "code": "PREVIEW_STALE",
+        "details": [
+          {
+            "reason": "VERSION_CHANGED"
+          }
+        ],
+        "message": "Conflict"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 409
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "e53f1272-de74-4091-ad19-8f8a85aba763",
+      "work_date": "2026-11-20",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-20",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "e53f1272-de74-4091-ad19-8f8a85aba763",
+      "work_date": "2026-11-20",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "SERVICE_UNAVAILABLE",
+        "details": [],
+        "message": "Service Unavailable"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 503
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "74273ca6-de58-4a9f-a415-2d78f65ac206"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "35.00",
+        "id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": null,
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "distance_km",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "-1",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "distance_km",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "NaN",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "distance_km",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "1e2",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "distance_km",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": 3.14,
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "distance_km",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "0.001",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "distance_km",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": null
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "working_hours",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "-1"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "working_hours",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "NaN"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "working_hours",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "1e2"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "working_hours",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": 3.14
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "working_hours",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "0.001"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "working_hours",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "24.01"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "working_hours",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-22",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "work_date",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "Idempotency-Key",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/vehicles/894215ca-dd58-4654-b902-c3d0c7fa61b3",
+    "request": {
+      "fuel_price_per_liter": "36.00"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "36.00",
+        "id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "PREVIEW_STALE",
+        "details": [
+          {
+            "reason": "COST_CHANGED"
+          }
+        ],
+        "message": "Conflict"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 409
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "90.00",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "83.75",
+          "estimated_net_per_km": "6.70",
+          "estimated_net_profit": "670.00",
+          "gross_income": "850.00",
+          "total_cost": "180.00",
+          "working_hours": "8.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "74273ca6-de58-4a9f-a415-2d78f65ac206"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "894215ca-dd58-4654-b902-c3d0c7fa61b3",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "PREVIEW_STALE",
+        "details": [
+          {
+            "reason": "EXPIRED"
+          }
+        ],
+        "message": "Conflict"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 409
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "55c4146d-7c02-485c-9dcf-829d97a0287c"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "35.00",
+        "id": "4833fe3a-d9d7-4b35-8fd3-3eb4b7336c54",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "4833fe3a-d9d7-4b35-8fd3-3eb4b7336c54",
+      "work_date": 20261121,
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "work_date",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "0b874073-0c51-4dbc-9f29-f12d32270477"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "35.00",
+        "id": "00c6ac06-a7dc-4445-98f5-46964dad2f40",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "00c6ac06-a7dc-4445-98f5-46964dad2f40",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "00c6ac06-a7dc-4445-98f5-46964dad2f40",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "2a534382-aefc-499e-a6a4-81c07bf268a7",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "00c6ac06-a7dc-4445-98f5-46964dad2f40",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "SESSION_DATE_EXISTS",
+        "details": [
+          {
+            "session_id": "2a534382-aefc-499e-a6a4-81c07bf268a7"
+          }
+        ],
+        "message": "Conflict"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 409
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/2a534382-aefc-499e-a6a4-81c07bf268a7/preview",
+    "request": {
+      "note": "concurrent"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/sessions/2a534382-aefc-499e-a6a4-81c07bf268a7",
+    "request": {
+      "note": "concurrent"
+    },
+    "response": {
+      "data": {
+        "id": "2a534382-aefc-499e-a6a4-81c07bf268a7",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 2
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/sessions/2a534382-aefc-499e-a6a4-81c07bf268a7",
+    "request": {
+      "note": "concurrent"
+    },
+    "response": {
+      "error": {
+        "code": "PREVIEW_STALE",
+        "details": [
+          {
+            "reason": "VERSION_CHANGED"
+          }
+        ],
+        "message": "Conflict"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 409
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/sessions/2a534382-aefc-499e-a6a4-81c07bf268a7",
+    "request": null,
+    "response": {
+      "data": {
+        "distance_km": "100.00",
+        "expenses": [
+          {
+            "amount": "30.00",
+            "category": "parking",
+            "note": ""
+          }
+        ],
+        "id": "2a534382-aefc-499e-a6a4-81c07bf268a7",
+        "incomes": [
+          {
+            "gross_income": "850.00",
+            "platform_code": "grab"
+          }
+        ],
+        "note": "concurrent",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "vehicle_id": "00c6ac06-a7dc-4445-98f5-46964dad2f40",
+        "version": 2,
+        "work_date": "2026-11-21",
+        "working_hours": "8.00"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "316a9923-a001-42d6-8821-5333439fead1"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "0e7cd0e3-2bb2-4f81-8d7c-eb53cc1fe0ae"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "35.00",
+        "id": "97688062-f6b0-4391-83b5-59d60939d125",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "0.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "97688062-f6b0-4391-83b5-59d60939d125",
+      "work_date": "2026-11-21",
+      "working_hours": "0.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "0.00",
+            "maintenance_reserve": "0.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "0.00",
+          "estimated_net_per_hour": null,
+          "estimated_net_per_km": null,
+          "estimated_net_profit": "820.00",
+          "gross_income": "850.00",
+          "total_cost": "30.00",
+          "working_hours": "0.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "0.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "97688062-f6b0-4391-83b5-59d60939d125",
+      "work_date": "2026-11-21",
+      "working_hours": "0.00"
+    },
+    "response": {
+      "data": {
+        "id": "04b118d9-efe1-4bc6-a83d-d52d52da283c",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "0.00",
+            "maintenance_reserve": "0.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "0.00",
+          "estimated_net_per_hour": null,
+          "estimated_net_per_km": null,
+          "estimated_net_profit": "820.00",
+          "gross_income": "850.00",
+          "total_cost": "30.00",
+          "working_hours": "0.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/reports/daily?date=2026-11-21",
+    "request": null,
+    "response": {
+      "data": {
+        "costs": {
+          "fuel_estimated": "0.00",
+          "maintenance_reserve": "0.00",
+          "other_actual": "30.00"
+        },
+        "currency": "THB",
+        "date": "2026-11-21",
+        "distance_km": "0.00",
+        "estimated_net_per_hour": null,
+        "estimated_net_per_km": null,
+        "estimated_net_profit": "820.00",
+        "gross_income": "850.00",
+        "total_cost": "30.00",
+        "working_hours": "0.00"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "0.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "97688062-f6b0-4391-83b5-59d60939d125",
+      "work_date": "2026-11-20",
+      "working_hours": "0.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "0.00",
+            "maintenance_reserve": "0.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-20",
+          "distance_km": "0.00",
+          "estimated_net_per_hour": null,
+          "estimated_net_per_km": null,
+          "estimated_net_profit": "820.00",
+          "gross_income": "850.00",
+          "total_cost": "30.00",
+          "working_hours": "0.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "0.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "97688062-f6b0-4391-83b5-59d60939d125",
+      "work_date": "2026-11-20",
+      "working_hours": "0.00"
+    },
+    "response": {
+      "data": {
+        "id": "94cf5015-366d-42ea-b54e-6764ad9c28c9",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "0.00",
+            "maintenance_reserve": "0.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-20",
+          "distance_km": "0.00",
+          "estimated_net_per_hour": null,
+          "estimated_net_per_km": null,
+          "estimated_net_profit": "820.00",
+          "gross_income": "850.00",
+          "total_cost": "30.00",
+          "working_hours": "0.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/sessions?page_size=1",
+    "request": null,
+    "response": {
+      "data": [
+        {
+          "distance_km": "0.00",
+          "expenses": [
+            {
+              "amount": "30.00",
+              "category": "parking",
+              "note": ""
+            }
+          ],
+          "id": "04b118d9-efe1-4bc6-a83d-d52d52da283c",
+          "incomes": [
+            {
+              "gross_income": "850.00",
+              "platform_code": "grab"
+            }
+          ],
+          "note": "",
+          "summary": {
+            "costs": {
+              "fuel_estimated": "0.00",
+              "maintenance_reserve": "0.00",
+              "other_actual": "30.00"
+            },
+            "currency": "THB",
+            "date": "2026-11-21",
+            "distance_km": "0.00",
+            "estimated_net_per_hour": null,
+            "estimated_net_per_km": null,
+            "estimated_net_profit": "820.00",
+            "gross_income": "850.00",
+            "total_cost": "30.00",
+            "working_hours": "0.00"
+          },
+          "vehicle_id": "97688062-f6b0-4391-83b5-59d60939d125",
+          "version": 1,
+          "work_date": "2026-11-21",
+          "working_hours": "0.00"
+        }
+      ],
+      "meta": {
+        "has_more": true,
+        "page": 1,
+        "page_size": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/sessions?page_size=1\u0026page=2",
+    "request": null,
+    "response": {
+      "data": [
+        {
+          "distance_km": "0.00",
+          "expenses": [
+            {
+              "amount": "30.00",
+              "category": "parking",
+              "note": ""
+            }
+          ],
+          "id": "94cf5015-366d-42ea-b54e-6764ad9c28c9",
+          "incomes": [
+            {
+              "gross_income": "850.00",
+              "platform_code": "grab"
+            }
+          ],
+          "note": "",
+          "summary": {
+            "costs": {
+              "fuel_estimated": "0.00",
+              "maintenance_reserve": "0.00",
+              "other_actual": "30.00"
+            },
+            "currency": "THB",
+            "date": "2026-11-20",
+            "distance_km": "0.00",
+            "estimated_net_per_hour": null,
+            "estimated_net_per_km": null,
+            "estimated_net_profit": "820.00",
+            "gross_income": "850.00",
+            "total_cost": "30.00",
+            "working_hours": "0.00"
+          },
+          "vehicle_id": "97688062-f6b0-4391-83b5-59d60939d125",
+          "version": 1,
+          "work_date": "2026-11-20",
+          "working_hours": "0.00"
+        }
+      ],
+      "meta": {
+        "has_more": false,
+        "page": 2,
+        "page_size": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/sessions",
+    "request": null,
+    "response": {
+      "data": [],
+      "meta": {
+        "has_more": false,
+        "page": 1,
+        "page_size": 20
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/sessions?page_size=101",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "page_size",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/04b118d9-efe1-4bc6-a83d-d52d52da283c/preview",
+    "request": {
+      "note": "retain inactive"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "0.00",
+            "maintenance_reserve": "0.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "0.00",
+          "estimated_net_per_hour": null,
+          "estimated_net_per_km": null,
+          "estimated_net_profit": "820.00",
+          "gross_income": "850.00",
+          "total_cost": "30.00",
+          "working_hours": "0.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/sessions/04b118d9-efe1-4bc6-a83d-d52d52da283c",
+    "request": {
+      "note": "retain inactive"
+    },
+    "response": {
+      "data": {
+        "id": "04b118d9-efe1-4bc6-a83d-d52d52da283c",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "0.00",
+            "maintenance_reserve": "0.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "0.00",
+          "estimated_net_per_hour": null,
+          "estimated_net_per_km": null,
+          "estimated_net_profit": "820.00",
+          "gross_income": "850.00",
+          "total_cost": "30.00",
+          "working_hours": "0.00"
+        },
+        "version": 2
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "0.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "97688062-f6b0-4391-83b5-59d60939d125",
+      "work_date": "2026-11-19",
+      "working_hours": "0.00"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "incomes",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  },
+  {
+    "cache_control": "no-store",
+    "method": "DELETE",
+    "path": "/api/v1/sessions/04b118d9-efe1-4bc6-a83d-d52d52da283c",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "NOT_FOUND",
+        "details": [],
+        "message": "Not Found"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 404
+  },
+  {
+    "cache_control": "no-store",
+    "method": "DELETE",
+    "path": "/api/v1/sessions/04b118d9-efe1-4bc6-a83d-d52d52da283c",
+    "request": null,
+    "response": {},
+    "set_cookie_present": false,
+    "status": 204
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/sessions/04b118d9-efe1-4bc6-a83d-d52d52da283c",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "NOT_FOUND",
+        "details": [],
+        "message": "Not Found"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 404
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/reports/daily?date=2026-11-21",
+    "request": null,
+    "response": {
+      "data": null
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "f7e585cd-88d5-42c8-8a32-4ff92979fb2e"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "f7e585cd-88d5-42c8-8a32-4ff92979fb2e"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/me",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "UNAUTHENTICATED",
+        "details": [],
+        "message": "Unauthorized"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 401
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "UNAUTHENTICATED",
+        "details": [],
+        "message": "Unauthorized"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 401
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 30,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "f7e585cd-88d5-42c8-8a32-4ff92979fb2e"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "UNAUTHENTICATED",
+        "details": [],
+        "message": "Unauthorized"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 401
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "753fd818-bc69-40b8-83fc-27ccde3d2f67"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "753fd818-bc69-40b8-83fc-27ccde3d2f67"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "95d18c81-89cd-4355-b11f-410a0156d9ce"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "08fee26b-6a13-498d-82fd-b02578b98bc6"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "35.00",
+        "id": "5be63ec2-2bf0-4063-abbe-bd12c547a1ef",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "35.00",
+        "id": "bef20039-f456-4c67-a5ef-182f66566dc1",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "5be63ec2-2bf0-4063-abbe-bd12c547a1ef",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "bef20039-f456-4c67-a5ef-182f66566dc1",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "PREVIEW_STALE",
+        "details": [
+          {
+            "reason": "TARGET_CHANGED"
+          }
+        ],
+        "message": "Conflict"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 409
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "5be63ec2-2bf0-4063-abbe-bd12c547a1ef",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "c1515558-3b47-4f2c-9891-4888344ff08f",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions/preview",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "bef20039-f456-4c67-a5ef-182f66566dc1",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "preview_token": "SYNTHETIC_REDACTED",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        }
+      }
+    },
+    "set_cookie_present": false,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "bef20039-f456-4c67-a5ef-182f66566dc1",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "data": {
+        "id": "bcff403c-e8a4-46f6-af8b-c3297e5b9480",
+        "summary": {
+          "costs": {
+            "fuel_estimated": "87.50",
+            "maintenance_reserve": "60.00",
+            "other_actual": "30.00"
+          },
+          "currency": "THB",
+          "date": "2026-11-21",
+          "distance_km": "100.00",
+          "estimated_net_per_hour": "84.06",
+          "estimated_net_per_km": "6.73",
+          "estimated_net_profit": "672.50",
+          "gross_income": "850.00",
+          "total_cost": "177.50",
+          "working_hours": "8.00"
+        },
+        "version": 1
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "GET",
+    "path": "/api/v1/me",
+    "request": null,
+    "response": {
+      "error": {
+        "code": "UNAUTHENTICATED",
+        "details": [],
+        "message": "Unauthorized"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 401
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "95d18c81-89cd-4355-b11f-410a0156d9ce"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/refresh",
+    "request": null,
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "95d18c81-89cd-4355-b11f-410a0156d9ce"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/sessions",
+    "request": {
+      "distance_km": "100.00",
+      "expenses": [
+        {
+          "amount": "30.00",
+          "category": "parking",
+          "note": ""
+        }
+      ],
+      "incomes": [
+        {
+          "gross_income": "850.00",
+          "platform_code": "grab"
+        }
+      ],
+      "note": "",
+      "vehicle_id": "5be63ec2-2bf0-4063-abbe-bd12c547a1ef",
+      "work_date": "2026-11-21",
+      "working_hours": "8.00"
+    },
+    "response": {
+      "error": {
+        "code": "SESSION_DATE_EXISTS",
+        "details": [
+          {
+            "session_id": "c1515558-3b47-4f2c-9891-4888344ff08f"
+          }
+        ],
+        "message": "Conflict"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 409
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/auth/line",
+    "request": {
+      "id_token": "SYNTHETIC_REDACTED"
+    },
+    "response": {
+      "data": {
+        "access_token": "SYNTHETIC_REDACTED",
+        "expires_in": 900,
+        "onboarding_completed": false,
+        "token_type": "Bearer",
+        "user": {
+          "display_name": null,
+          "id": "9d1dc798-02f6-4205-9fdb-d066aa5f53d8"
+        }
+      }
+    },
+    "set_cookie_present": true,
+    "status": 200
+  },
+  {
+    "cache_control": "no-store",
+    "method": "POST",
+    "path": "/api/v1/vehicles",
+    "request": {
+      "fuel_price_per_liter": "35.00",
+      "is_default": true,
+      "km_per_liter": "40.000",
+      "maintenance_reserve_per_km": "0.600",
+      "name": "Test bike"
+    },
+    "response": {
+      "data": {
+        "fuel_price_per_liter": "35.00",
+        "id": "1cb380f7-ae53-4fbd-9d04-458dea8f9a7e",
+        "is_default": true,
+        "km_per_liter": "40.000",
+        "maintenance_reserve_per_km": "0.600",
+        "name": "Test bike"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 201
+  },
+  {
+    "cache_control": "no-store",
+    "method": "PATCH",
+    "path": "/api/v1/vehicles/1cb380f7-ae53-4fbd-9d04-458dea8f9a7e",
+    "request": {
+      "name km_per_liter": "ignored"
+    },
+    "response": {
+      "error": {
+        "code": "VALIDATION_ERROR",
+        "details": [
+          {
+            "code": "INVALID",
+            "field": "name km_per_liter",
+            "message": "ข้อมูลไม่ถูกต้อง"
+          }
+        ],
+        "message": "Unprocessable Entity"
+      }
+    },
+    "set_cookie_present": false,
+    "status": 422
+  }
+]

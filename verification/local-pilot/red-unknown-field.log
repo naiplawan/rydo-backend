@@ -1,0 +1,5 @@
+--- FAIL: TestRejectsUnknownCompoundPropertyNames (0.01s)
+    integration_test.go:590: want 422 got 200: {"data":{"id":"2a0da939-853d-4346-b86e-c204f04fecad","name":"Test bike","km_per_liter":"40.000","fuel_price_per_liter":"35.00","maintenance_reserve_per_km":"0.600","is_default":true}}
+FAIL
+FAIL	rydo-backend/internal/pilot	0.898s
+FAIL

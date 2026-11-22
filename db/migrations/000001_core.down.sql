@@ -1,0 +1,9 @@
+DROP TABLE expense_entries;
+DROP TABLE income_entries;
+DROP TABLE session_requests;
+DROP TABLE daily_sessions;
+DROP TABLE vehicles;
+DROP TABLE user_platforms;
+DROP TABLE auth_sessions;
+DROP TABLE platforms;
+DROP TABLE users;

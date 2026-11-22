@@ -1,0 +1,13 @@
+**
+!Dockerfile
+!go.mod
+!go.sum
+!cmd/
+!cmd/**
+!internal/
+!internal/**
+!db/
+!db/migrations/
+!db/migrations/**
+!scripts/
+!scripts/railway-migrate.sh

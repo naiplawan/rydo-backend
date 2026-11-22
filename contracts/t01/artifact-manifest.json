@@ -1,0 +1,15 @@
+{
+  "go-vet.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "validation-requirements.txt": "278eba88a417ead780decf7d4beb816fd6facb303df6e6ec64a893f3e5fd98f1",
+  "README.md": "ee335460006140490b5a0f9c6befdf242636c125cce04a34dec8d7ea9a7690e3",
+  "examples.json": "6fdffe2f9d1ab94777c0adf737159e9228e961d75c655dc1a40249ced45cc96f",
+  "VERIFICATION.md": "e718c8efc60a47a12576c3ce9c56981be0c64e721dc34d0cbdb6a6f1d926d6ca",
+  "source-baseline.json": "a5bd65b3bb8e02471173e952a2a3e0492ce0b4f5f01baa81138d4a50271be8e8",
+  "validate_contract.py": "63e2265c934928ff5b3164e6806bb4058986e57da1274013659b74bf04ba3a58",
+  "OWNERSHIP.md": "5267faf160cae51fbf373df6912e3daf39f1dcf012fcc92db29fc076d91d6b9c",
+  "source-reviewed.json": "00710add56b3d46e226b54c53b129a903c80363d35c6bb2a89baaa2dd5ebd38d",
+  "go-test.log": "ab0704ff5a6b774e1a0106ae6cd5bde51851feb4e94c4fe2bd1502de93b5afb4",
+  "go-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "validation-result.json": "d2b544a9615d6bcc2b7e364c63398e631dcdf415d69a260edd74df1b45950303",
+  "openapi.proposed.json": "d2478bc1a9328e2379e5a5655208ad4cc1015c2ce4cd2c68ff07f6c2da21d9af"
+}

@@ -1,0 +1,6 @@
+2026/11/21 23:25:56 ERROR pilot request failed route=/api/v1/sessions/preview
+--- FAIL: TestRejectsNonStringWorkDate (0.02s)
+    integration_test.go:391: want 422 got 503: {"error":{"code":"SERVICE_UNAVAILABLE","details":[],"message":"Service Unavailable"}}
+FAIL
+FAIL	rydo-backend/internal/pilot	1.262s
+FAIL

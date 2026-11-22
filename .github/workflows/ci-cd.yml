@@ -1,0 +1,93 @@
+name: Backend CI/CD
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@924ae3a1cded613372ab5595356fb5720e22ba16 # v6
+        with:
+          go-version: '1.27.4'
+      - name: Install PostgreSQL and migration CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-16 postgresql-client-16 libpq-dev python3-venv
+          printf '%s\n' "$(pg_config --bindir)" "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+          go install -tags postgres github.com/golang-migrate/migrate/v4/cmd/migrate@v4.20.1
+      - name: Check Go modules and formatting
+        run: |
+          go mod verify
+          go mod tidy -diff
+          unformatted="$(gofmt -l cmd internal)"
+          if [ -n "$unformatted" ]; then
+            printf '%s\n' "$unformatted"
+            exit 1
+          fi
+      - name: Analyze, test and build
+        env:
+          RYDO_CAPTURE_HTTP: ${{ github.workspace }}/verification/local-pilot/http-capture.json
+        run: |
+          go vet ./...
+          go test -race -count=1 ./...
+          go build -buildvcs=false ./...
+          sh scripts/test-foundation.sh
+      - name: Verify pilot HTTP contract
+        run: |
+          python3 -m venv "$RUNNER_TEMP/contract-venv"
+          "$RUNNER_TEMP/contract-venv/bin/pip" install -r contracts/t01/validation-requirements.txt
+          "$RUNNER_TEMP/contract-venv/bin/python" scripts/validate-pilot-http.py
+      - name: Build deployment image
+        run: |
+          docker build --tag rydo-backend:ci .
+          docker run --rm --entrypoint /bin/sh rydo-backend:ci -ec '
+            test -x /app/rydo-api
+            test -x /app/railway-migrate
+            test -r /app/db/migrations/000001_core.up.sql
+            migrate -version
+          '
+
+  deploy:
+    needs: verify
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    environment: railway-pilot
+    concurrency:
+      group: railway-pilot
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+      - name: Install Railway CLI
+        run: npm install --global @railway/cli@5.75.0
+      - name: Deploy and wait for Railway
+        env:
+          RAILWAY_TOKEN: ${{ secrets.RAILWAY_TOKEN }}
+          RAILWAY_PROJECT_ID: ${{ vars.RAILWAY_PROJECT_ID }}
+          RAILWAY_ENVIRONMENT_ID: ${{ vars.RAILWAY_ENVIRONMENT_ID }}
+          RAILWAY_SERVICE_ID: ${{ vars.RAILWAY_SERVICE_ID }}
+        run: |
+          : "${RAILWAY_TOKEN:?Set the Railway project token in GitHub}"
+          : "${RAILWAY_PROJECT_ID:?Set the Railway project ID in GitHub}"
+          : "${RAILWAY_ENVIRONMENT_ID:?Set the Railway environment ID in GitHub}"
+          : "${RAILWAY_SERVICE_ID:?Set the Railway service ID in GitHub}"
+          railway up --project "$RAILWAY_PROJECT_ID" \
+            --environment "$RAILWAY_ENVIRONMENT_ID" --service "$RAILWAY_SERVICE_ID" \
+            --message "GitHub $GITHUB_SHA" </dev/null

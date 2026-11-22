@@ -1,0 +1,2964 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "RYDO PILOT — PROPOSED contract, NOT runtime API",
+    "version": "0.1.0-proposed-t01",
+    "description": "Design contract for integration; every operation is NOT implemented at this baseline. Runtime Swagger remains cmd/rydo-api/swagger/openapi.json (health only). Do not replace/embed/advertise this artifact as served functionality. P01–P08 are reversible local contract proposals documented in README.md, not changes to PRD/API source."
+  },
+  "servers": [
+    {
+      "url": "/",
+      "description": "Design-only same-origin proxy target. Not proof of a reachable API."
+    }
+  ],
+  "security": [
+    {
+      "BearerAuth": []
+    }
+  ],
+  "x-contract-status": "proposed",
+  "x-runtime-implemented": false,
+  "x-provisional-decisions": [
+    "P01",
+    "P02",
+    "P03",
+    "P04",
+    "P05",
+    "P06",
+    "P07",
+    "P08"
+  ],
+  "paths": {
+    "/api/v1/auth/line": {
+      "post": {
+        "operationId": "loginLine",
+        "summary": "PROPOSED: loginLine",
+        "description": "Verify LINE ID token server-side; upsert verified subject; create a 30-day app session and revoke session represented by replaced cookie in same transaction. Never trust client accountId. Access token stays in memory. Set HttpOnly refresh cookie (see response header).",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              },
+              "Set-Cookie": {
+                "required": true,
+                "schema": {
+                  "type": "string"
+                },
+                "description": "__Host-rydo_refresh=<opaque>; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age is remaining original 30-day session lifetime; no Domain. Logout sets empty value, Max-Age=0. Proxy forwards Set-Cookie to same web origin. No real credentials in examples."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                },
+                "example": {
+                  "data": {
+                    "access_token": "EXAMPLE_NOT_A_TOKEN",
+                    "token_type": "Bearer",
+                    "expires_in": 900,
+                    "user": {
+                      "id": "11111111-1111-4111-8111-111111111111",
+                      "display_name": null
+                    },
+                    "onboarding_completed": true
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          }
+        },
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Origin"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Login"
+              },
+              "example": {
+                "id_token": "EXAMPLE_NOT_A_LINE_ID_TOKEN"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/refresh": {
+      "post": {
+        "operationId": "refreshSession",
+        "summary": "PROPOSED: refreshSession",
+        "description": "No request body. Original session expiry is unchanged, access expiry <= min(now+900s, session expiry). Missing/expired/revoked refresh cookie ->401. Refresh once on app start or access expiry; retry original confirmation with identical body/key/preview.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              },
+              "Set-Cookie": {
+                "required": true,
+                "schema": {
+                  "type": "string"
+                },
+                "description": "__Host-rydo_refresh=<opaque>; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age is remaining original 30-day session lifetime; no Domain. Logout sets empty value, Max-Age=0. Proxy forwards Set-Cookie to same web origin. No real credentials in examples."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/AuthResponse"
+                },
+                "example": {
+                  "data": {
+                    "access_token": "EXAMPLE_NOT_A_TOKEN",
+                    "token_type": "Bearer",
+                    "expires_in": 900,
+                    "user": {
+                      "id": "11111111-1111-4111-8111-111111111111",
+                      "display_name": null
+                    },
+                    "onboarding_completed": true
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          }
+        },
+        "security": [
+          {
+            "RefreshCookie": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Origin"
+          }
+        ]
+      }
+    },
+    "/api/v1/auth/logout": {
+      "post": {
+        "operationId": "logoutSession",
+        "summary": "PROPOSED: logoutSession",
+        "description": "No body; exact Origin check first. Read optional __Host-rydo_refresh cookie, revoke only that app session if present, clear cookie. Missing/expired cookie still204. Do not require Bearer. Clear frontend token and this account’s unsent financial state.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "204": {
+            "description": "Success, no response body.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              },
+              "Set-Cookie": {
+                "required": true,
+                "schema": {
+                  "type": "string"
+                },
+                "description": "__Host-rydo_refresh=<opaque>; Path=/; Secure; HttpOnly; SameSite=Lax; Max-Age is remaining original 30-day session lifetime; no Domain. Logout sets empty value, Max-Age=0. Proxy forwards Set-Cookie to same web origin. No real credentials in examples."
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "403": {
+            "$ref": "#/components/responses/Error403"
+          }
+        },
+        "security": [],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/Origin"
+          }
+        ]
+      }
+    },
+    "/api/v1/me": {
+      "get": {
+        "operationId": "getMe",
+        "summary": "PROPOSED: getMe",
+        "description": "P02 response shape: current own profile + onboarding state; display_name nullable; never expose LINE subject.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileResponse"
+                },
+                "example": {
+                  "data": {
+                    "id": "11111111-1111-4111-8111-111111111111",
+                    "display_name": null,
+                    "timezone": "Asia/Bangkok",
+                    "preferred_platform_codes": [
+                      "grab",
+                      "lineman"
+                    ],
+                    "onboarding_completed": true
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": []
+      }
+    },
+    "/api/v1/me/profile": {
+      "get": {
+        "operationId": "getProfile",
+        "summary": "PROPOSED: getProfile",
+        "description": "",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileResponse"
+                },
+                "example": {
+                  "data": {
+                    "id": "11111111-1111-4111-8111-111111111111",
+                    "display_name": null,
+                    "timezone": "Asia/Bangkok",
+                    "preferred_platform_codes": [
+                      "grab",
+                      "lineman"
+                    ],
+                    "onboarding_completed": true
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": []
+      },
+      "put": {
+        "operationId": "replaceProfile",
+        "summary": "PROPOSED: replaceProfile",
+        "description": "All fields required for PUT. Unique active preferred codes. onboarding_completed = active vehicle exists AND >=1 preferred platform; computed server-side. Provisional null-name policy P03: login can return null; explicit user-entered string may set display_name.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProfileResponse"
+                },
+                "example": {
+                  "data": {
+                    "id": "11111111-1111-4111-8111-111111111111",
+                    "display_name": "Rider",
+                    "timezone": "Asia/Bangkok",
+                    "preferred_platform_codes": [
+                      "grab",
+                      "lineman"
+                    ],
+                    "onboarding_completed": true
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ProfileWrite"
+              },
+              "example": {
+                "display_name": "Rider",
+                "timezone": "Asia/Bangkok",
+                "preferred_platform_codes": [
+                  "grab",
+                  "lineman"
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/platforms": {
+      "get": {
+        "operationId": "listPlatforms",
+        "summary": "PROPOSED: listPlatforms",
+        "description": "P02: require Bearer like other pilot data; list active platforms only. Existing inactive code/name remains available in saved session reads, even if absent here.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlatformsResponse"
+                },
+                "example": {
+                  "data": [
+                    {
+                      "code": "grab",
+                      "name": "Grab"
+                    },
+                    {
+                      "code": "lineman",
+                      "name": "LINE MAN"
+                    },
+                    {
+                      "code": "shopeefood",
+                      "name": "ShopeeFood"
+                    },
+                    {
+                      "code": "other",
+                      "name": "Other"
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": []
+      }
+    },
+    "/api/v1/vehicles": {
+      "get": {
+        "operationId": "listVehicles",
+        "summary": "PROPOSED: listVehicles",
+        "description": "P02: array of zero or one owned active vehicle; empty data:[] means setup needed.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehiclesResponse"
+                },
+                "example": {
+                  "data": [
+                    {
+                      "id": "22222222-2222-4222-8222-222222222222",
+                      "name": "Honda Wave",
+                      "km_per_liter": "40.000",
+                      "fuel_price_per_liter": "35.00",
+                      "maintenance_reserve_per_km": "0.600",
+                      "is_default": true
+                    }
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": []
+      },
+      "post": {
+        "operationId": "createVehicle",
+        "summary": "PROPOSED: createVehicle",
+        "description": "Create one owned active vehicle; second create409 VEHICLE_EXISTS; is_default omitted defaults true. No snapshot changes to past records.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "201": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehicleResponse"
+                },
+                "example": {
+                  "data": {
+                    "id": "22222222-2222-4222-8222-222222222222",
+                    "name": "Honda Wave",
+                    "km_per_liter": "40.000",
+                    "fuel_price_per_liter": "35.00",
+                    "maintenance_reserve_per_km": "0.600",
+                    "is_default": true
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "409": {
+            "$ref": "#/components/responses/Error409"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VehicleCreate"
+              },
+              "example": {
+                "name": "Honda Wave",
+                "km_per_liter": "40.000",
+                "fuel_price_per_liter": "35.00",
+                "maintenance_reserve_per_km": "0.600",
+                "is_default": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/vehicles/{vehicle_id}": {
+      "patch": {
+        "operationId": "patchVehicle",
+        "summary": "PROPOSED: patchVehicle",
+        "description": "P04 partial object, null/empty rejected; nonowned/deleted404. Retain historical session snapshots. New creates use updated costs; recheck create preview under row lock in save transaction.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/VehicleResponse"
+                },
+                "example": {
+                  "data": {
+                    "id": "22222222-2222-4222-8222-222222222222",
+                    "name": "Honda Wave",
+                    "km_per_liter": "40.000",
+                    "fuel_price_per_liter": "36.00",
+                    "maintenance_reserve_per_km": "0.600",
+                    "is_default": true
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/vehicle_id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/VehiclePatch"
+              },
+              "example": {
+                "fuel_price_per_liter": "36.00"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sessions/preview": {
+      "post": {
+        "operationId": "previewCreate",
+        "summary": "PROPOSED: previewCreate",
+        "description": "Owned active vehicle; validate Bangkok date, active unique platform codes and precision. No writes. Existing-date conflict is decided on confirmed create; client should find existing date before preview (P08). Token expiry 15min; no idempotency key needed for preview.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PreviewResponse"
+                },
+                "example": {
+                  "data": {
+                    "summary": {
+                      "date": "2026-11-21",
+                      "currency": "THB",
+                      "gross_income": "850.00",
+                      "costs": {
+                        "fuel_estimated": "87.50",
+                        "maintenance_reserve": "60.00",
+                        "other_actual": "30.00"
+                      },
+                      "total_cost": "177.50",
+                      "estimated_net_profit": "672.50",
+                      "distance_km": "100.00",
+                      "working_hours": "8.00",
+                      "estimated_net_per_km": "6.73",
+                      "estimated_net_per_hour": "84.06"
+                    },
+                    "preview_token": "EXAMPLE_NOT_A_PREVIEW_TOKEN"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionCreate"
+              },
+              "example": {
+                "work_date": "2026-11-21",
+                "vehicle_id": "22222222-2222-4222-8222-222222222222",
+                "distance_km": "100.00",
+                "working_hours": "8.00",
+                "incomes": [
+                  {
+                    "platform_code": "grab",
+                    "gross_income": "500.00"
+                  },
+                  {
+                    "platform_code": "lineman",
+                    "gross_income": "250.00"
+                  },
+                  {
+                    "platform_code": "shopeefood",
+                    "gross_income": "100.00"
+                  }
+                ],
+                "expenses": [
+                  {
+                    "category": "parking",
+                    "amount": "30.00",
+                    "note": ""
+                  }
+                ],
+                "note": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/sessions": {
+      "post": {
+        "operationId": "confirmCreate",
+        "summary": "PROPOSED: confirmCreate",
+        "description": "Authenticate and validate syntax/required headers first. Serialize by (user,key); compare fingerprint (method, concrete path, normalized supplied body, exact preview token). Matching committed unexpired response replays BEFORE preview expiry/date/version checks. Different fingerprint409 IDEMPOTENCY_KEY_REUSED. Without replay: ownership404, then active date conflict409 SESSION_DATE_EXISTS (P08), then preview verification409 PREVIEW_STALE. Missing/invalid required confirmation header422 VALIDATION_ERROR. DB transaction atomically commits session+children+response; unique active user/date is final concurrency guard. Expired key: client reloads current record before resubmit; no replay guarantee beyond24h. Create snapshots cost settings after locking/rechecking current vehicle values against preview. Return only id/version/summary, then GET detail for frontend SavedDay.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "201": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfirmationResponse"
+                },
+                "example": {
+                  "data": {
+                    "id": "33333333-3333-4333-8333-333333333333",
+                    "version": 1,
+                    "summary": {
+                      "date": "2026-11-21",
+                      "currency": "THB",
+                      "gross_income": "850.00",
+                      "costs": {
+                        "fuel_estimated": "87.50",
+                        "maintenance_reserve": "60.00",
+                        "other_actual": "30.00"
+                      },
+                      "total_cost": "177.50",
+                      "estimated_net_profit": "672.50",
+                      "distance_km": "100.00",
+                      "working_hours": "8.00",
+                      "estimated_net_per_km": "6.73",
+                      "estimated_net_per_hour": "84.06"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "409": {
+            "$ref": "#/components/responses/Error409"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/PreviewToken"
+          },
+          {
+            "$ref": "#/components/parameters/IdempotencyKey"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionCreate"
+              },
+              "example": {
+                "work_date": "2026-11-21",
+                "vehicle_id": "22222222-2222-4222-8222-222222222222",
+                "distance_km": "100.00",
+                "working_hours": "8.00",
+                "incomes": [
+                  {
+                    "platform_code": "grab",
+                    "gross_income": "500.00"
+                  },
+                  {
+                    "platform_code": "lineman",
+                    "gross_income": "250.00"
+                  },
+                  {
+                    "platform_code": "shopeefood",
+                    "gross_income": "100.00"
+                  }
+                ],
+                "expenses": [
+                  {
+                    "category": "parking",
+                    "amount": "30.00",
+                    "note": ""
+                  }
+                ],
+                "note": ""
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "operationId": "listSessions",
+        "summary": "PROPOSED: listSessions",
+        "description": "Owned active records, inclusive dates; from<=to when both supplied. P02 optional from/to independently omit bound; future dates invalid per Date. Order work_date DESC,id DESC; max page_size100; return has_more and no required total. Fetch next page until false; fixture listDays() is not implicitly a complete server history.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionsResponse"
+                },
+                "example": {
+                  "data": [
+                    {
+                      "work_date": "2026-11-21",
+                      "vehicle_id": "22222222-2222-4222-8222-222222222222",
+                      "distance_km": "100.00",
+                      "working_hours": "8.00",
+                      "incomes": [
+                        {
+                          "platform_code": "grab",
+                          "gross_income": "500.00"
+                        },
+                        {
+                          "platform_code": "lineman",
+                          "gross_income": "250.00"
+                        },
+                        {
+                          "platform_code": "shopeefood",
+                          "gross_income": "100.00"
+                        }
+                      ],
+                      "expenses": [
+                        {
+                          "category": "parking",
+                          "amount": "30.00",
+                          "note": ""
+                        }
+                      ],
+                      "note": "",
+                      "id": "33333333-3333-4333-8333-333333333333",
+                      "version": 1,
+                      "summary": {
+                        "date": "2026-11-21",
+                        "currency": "THB",
+                        "gross_income": "850.00",
+                        "costs": {
+                          "fuel_estimated": "87.50",
+                          "maintenance_reserve": "60.00",
+                          "other_actual": "30.00"
+                        },
+                        "total_cost": "177.50",
+                        "estimated_net_profit": "672.50",
+                        "distance_km": "100.00",
+                        "working_hours": "8.00",
+                        "estimated_net_per_km": "6.73",
+                        "estimated_net_per_hour": "84.06"
+                      }
+                    }
+                  ],
+                  "meta": {
+                    "page": 1,
+                    "page_size": 20,
+                    "has_more": false
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/from"
+          },
+          {
+            "$ref": "#/components/parameters/to"
+          },
+          {
+            "$ref": "#/components/parameters/page"
+          },
+          {
+            "$ref": "#/components/parameters/page_size"
+          }
+        ]
+      }
+    },
+    "/api/v1/sessions/{session_id}": {
+      "get": {
+        "operationId": "getSession",
+        "summary": "PROPOSED: getSession",
+        "description": "Owned active record, current version and calculated summary from saved snapshot. Notes serialized as empty strings if DB null. Nonowned/deleted404.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SessionResponse"
+                },
+                "example": {
+                  "data": {
+                    "work_date": "2026-11-21",
+                    "vehicle_id": "22222222-2222-4222-8222-222222222222",
+                    "distance_km": "100.00",
+                    "working_hours": "8.00",
+                    "incomes": [
+                      {
+                        "platform_code": "grab",
+                        "gross_income": "500.00"
+                      },
+                      {
+                        "platform_code": "lineman",
+                        "gross_income": "250.00"
+                      },
+                      {
+                        "platform_code": "shopeefood",
+                        "gross_income": "100.00"
+                      }
+                    ],
+                    "expenses": [
+                      {
+                        "category": "parking",
+                        "amount": "30.00",
+                        "note": ""
+                      }
+                    ],
+                    "note": "",
+                    "id": "33333333-3333-4333-8333-333333333333",
+                    "version": 1,
+                    "summary": {
+                      "date": "2026-11-21",
+                      "currency": "THB",
+                      "gross_income": "850.00",
+                      "costs": {
+                        "fuel_estimated": "87.50",
+                        "maintenance_reserve": "60.00",
+                        "other_actual": "30.00"
+                      },
+                      "total_cost": "177.50",
+                      "estimated_net_profit": "672.50",
+                      "distance_km": "100.00",
+                      "working_hours": "8.00",
+                      "estimated_net_per_km": "6.73",
+                      "estimated_net_per_hour": "84.06"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/session_id"
+          }
+        ]
+      },
+      "patch": {
+        "operationId": "confirmEdit",
+        "summary": "PROPOSED: confirmEdit",
+        "description": "Authenticate; same-key replay/fingerprint precedence as create, before preview/version checks. Lock owned active session; verify preview base version atomically; VERSION_CHANGED returns409 PREVIEW_STALE with reason, reload detail before new preview/confirmation. Use original snapshot even if vehicle changed; atomically replace supplied children, increment version and store replay response. No work_date/vehicle/snapshot edits. GET detail after response. P04 normalization preserves omitted-vs-supplied field set.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ConfirmationResponse"
+                },
+                "example": {
+                  "data": {
+                    "id": "33333333-3333-4333-8333-333333333333",
+                    "version": 2,
+                    "summary": {
+                      "date": "2026-11-21",
+                      "currency": "THB",
+                      "gross_income": "850.00",
+                      "costs": {
+                        "fuel_estimated": "87.50",
+                        "maintenance_reserve": "60.00",
+                        "other_actual": "0.00"
+                      },
+                      "total_cost": "147.50",
+                      "estimated_net_profit": "702.50",
+                      "distance_km": "100.00",
+                      "working_hours": "7.75",
+                      "estimated_net_per_km": "7.03",
+                      "estimated_net_per_hour": "90.65"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "409": {
+            "$ref": "#/components/responses/Error409"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/session_id"
+          },
+          {
+            "$ref": "#/components/parameters/PreviewToken"
+          },
+          {
+            "$ref": "#/components/parameters/IdempotencyKey"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionPatch"
+              },
+              "example": {
+                "working_hours": "7.75",
+                "expenses": []
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "operationId": "deleteSession",
+        "summary": "PROPOSED: deleteSession",
+        "description": "Original API soft delete of owned active record only, nonowned/deleted404 (P04). No confirmation/key contract specified for DELETE. NOT a pilot UI action and must never be used as date-correction workaround: recreated row would use new vehicle settings. Owner-approved date correction remains D01, outside this contract.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "204": {
+            "description": "Success, no response body.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/session_id"
+          }
+        ]
+      }
+    },
+    "/api/v1/sessions/{session_id}/preview": {
+      "post": {
+        "operationId": "previewEdit",
+        "summary": "PROPOSED: previewEdit",
+        "description": "Partial patch merged with current owned active session; original cost snapshot used, not current vehicle. Token binds supplied patch and resulting merged input plus base version. Omitted retains, arrays replace, expense[] clears, income[] invalid; reject date/vehicle/snapshot/version fields.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PreviewResponse"
+                },
+                "example": {
+                  "data": {
+                    "summary": {
+                      "date": "2026-11-21",
+                      "currency": "THB",
+                      "gross_income": "850.00",
+                      "costs": {
+                        "fuel_estimated": "87.50",
+                        "maintenance_reserve": "60.00",
+                        "other_actual": "0.00"
+                      },
+                      "total_cost": "147.50",
+                      "estimated_net_profit": "702.50",
+                      "distance_km": "100.00",
+                      "working_hours": "7.75",
+                      "estimated_net_per_km": "7.03",
+                      "estimated_net_per_hour": "90.65"
+                    },
+                    "preview_token": "EXAMPLE_EDIT_PREVIEW_TOKEN"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "404": {
+            "$ref": "#/components/responses/Error404"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/session_id"
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SessionPatch"
+              },
+              "example": {
+                "working_hours": "7.75",
+                "expenses": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/reports/daily": {
+      "get": {
+        "operationId": "getDailyReport",
+        "summary": "PROPOSED: getDailyReport",
+        "description": "Own active record for Bangkok date; no row returns200 data:null, not404. Calculations use saved snapshot.",
+        "x-runtime-implemented": false,
+        "x-contract-status": "proposed",
+        "responses": {
+          "200": {
+            "description": "Proposed success; NOT implemented by runtime.",
+            "headers": {
+              "Cache-Control": {
+                "required": true,
+                "schema": {
+                  "type": "string",
+                  "enum": [
+                    "no-store"
+                  ]
+                },
+                "description": "All financial/private and authentication responses must not be stored by shared caches."
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/DailyReportResponse"
+                },
+                "example": {
+                  "data": {
+                    "date": "2026-11-21",
+                    "currency": "THB",
+                    "gross_income": "850.00",
+                    "costs": {
+                      "fuel_estimated": "87.50",
+                      "maintenance_reserve": "60.00",
+                      "other_actual": "30.00"
+                    },
+                    "total_cost": "177.50",
+                    "estimated_net_profit": "672.50",
+                    "distance_km": "100.00",
+                    "working_hours": "8.00",
+                    "estimated_net_per_km": "6.73",
+                    "estimated_net_per_hour": "84.06"
+                  }
+                }
+              }
+            }
+          },
+          "400": {
+            "$ref": "#/components/responses/Error400"
+          },
+          "422": {
+            "$ref": "#/components/responses/Error422"
+          },
+          "429": {
+            "$ref": "#/components/responses/Error429"
+          },
+          "500": {
+            "$ref": "#/components/responses/Error500"
+          },
+          "503": {
+            "$ref": "#/components/responses/Error503"
+          },
+          "401": {
+            "$ref": "#/components/responses/Error401"
+          }
+        },
+        "security": [
+          {
+            "BearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "$ref": "#/components/parameters/date"
+          }
+        ]
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "UUID": {
+        "type": "string",
+        "format": "uuid"
+      },
+      "Date": {
+        "type": "string",
+        "format": "date",
+        "description": "Valid calendar date, not after today in Asia/Bangkok. Proposed supported range 0001-01-01..9999-12-31 (P07); server checks today dynamically."
+      },
+      "Note": {
+        "type": "string",
+        "maxLength": 1000,
+        "default": "",
+        "description": "Provisional P01: <=1000 Unicode code points; omitted on create becomes empty string; null rejected."
+      },
+      "MoneyInput": {
+        "type": "string",
+        "pattern": "^0*[0-9]{1,10}(?:\\.[0-9]{1,2})?$",
+        "maxLength": 32,
+        "description": "Nonnegative decimal string; no sign, exponent, comma or whitespace. Leading zeros permitted. DB precision/scale enforced; 32-character cap is provisional P01."
+      },
+      "Distance": {
+        "type": "string",
+        "pattern": "^0*[0-9]{1,8}(?:\\.[0-9]{1,2})?$",
+        "maxLength": 32,
+        "description": "Nonnegative decimal string; no sign, exponent, comma or whitespace. Leading zeros permitted. DB precision/scale enforced; 32-character cap is provisional P01."
+      },
+      "Hours": {
+        "type": "string",
+        "pattern": "^(?:0*(?:[0-9]|1[0-9]|2[0-3])(?:\\.[0-9]{1,2})?|0*24(?:\\.0{1,2})?)$",
+        "maxLength": 32,
+        "description": "0..24 decimal hours, at most two fractional digits. Never HH:mm. Numeric limits agree with current profit code; length cap P01."
+      },
+      "Efficiency": {
+        "type": "string",
+        "pattern": "^0*[0-9]{1,5}(?:\\.[0-9]{1,3})?$",
+        "maxLength": 32,
+        "description": "Nonnegative decimal string; no sign, exponent, comma or whitespace. Leading zeros permitted. DB precision/scale enforced; 32-character cap is provisional P01.",
+        "not": {
+          "pattern": "^0+(?:\\.0+)?$"
+        }
+      },
+      "FuelPrice": {
+        "type": "string",
+        "pattern": "^0*[0-9]{1,6}(?:\\.[0-9]{1,2})?$",
+        "maxLength": 32,
+        "description": "Nonnegative decimal string; no sign, exponent, comma or whitespace. Leading zeros permitted. DB precision/scale enforced; 32-character cap is provisional P01."
+      },
+      "Reserve": {
+        "type": "string",
+        "pattern": "^0*[0-9]{1,5}(?:\\.[0-9]{1,3})?$",
+        "maxLength": 32,
+        "description": "Nonnegative decimal string; no sign, exponent, comma or whitespace. Leading zeros permitted. DB precision/scale enforced; 32-character cap is provisional P01."
+      },
+      "NonnegativeAmount": {
+        "type": "string",
+        "pattern": "^[0-9]+\\.[0-9]{2}$",
+        "description": "Calculated output, not limited to individual input-column precision; totals can exceed it."
+      },
+      "SignedAmount": {
+        "type": "string",
+        "pattern": "^-?[0-9]+\\.[0-9]{2}$",
+        "description": "Calculated output can be negative; normalize negative zero to 0.00."
+      },
+      "NullableRate": {
+        "type": [
+          "string",
+          "null"
+        ],
+        "pattern": "^-?[0-9]+\\.[0-9]{2}$",
+        "description": "null only when the corresponding denominator is zero."
+      },
+      "PlatformCode": {
+        "type": "string",
+        "enum": [
+          "grab",
+          "lineman",
+          "shopeefood",
+          "other"
+        ]
+      },
+      "Platform": {
+        "type": "object",
+        "properties": {
+          "code": {
+            "$ref": "#/components/schemas/PlatformCode"
+          },
+          "name": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "code",
+          "name"
+        ],
+        "additionalProperties": false
+      },
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "display_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 120
+          }
+        },
+        "required": [
+          "id",
+          "display_name"
+        ],
+        "additionalProperties": false
+      },
+      "Profile": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "display_name": {
+            "type": [
+              "string",
+              "null"
+            ],
+            "maxLength": 120
+          },
+          "timezone": {
+            "type": "string",
+            "enum": [
+              "Asia/Bangkok"
+            ]
+          },
+          "preferred_platform_codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PlatformCode"
+            },
+            "uniqueItems": true,
+            "maxItems": 4
+          },
+          "onboarding_completed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "id",
+          "display_name",
+          "timezone",
+          "preferred_platform_codes",
+          "onboarding_completed"
+        ],
+        "additionalProperties": false
+      },
+      "ProfileWrite": {
+        "type": "object",
+        "properties": {
+          "display_name": {
+            "type": "string",
+            "maxLength": 120
+          },
+          "timezone": {
+            "type": "string",
+            "enum": [
+              "Asia/Bangkok"
+            ]
+          },
+          "preferred_platform_codes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/PlatformCode"
+            },
+            "uniqueItems": true,
+            "maxItems": 4
+          }
+        },
+        "required": [
+          "display_name",
+          "timezone",
+          "preferred_platform_codes"
+        ],
+        "additionalProperties": false
+      },
+      "Login": {
+        "type": "object",
+        "properties": {
+          "id_token": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16384,
+            "description": "Synthetic examples are placeholders. Never log real tokens. Provisional token-size bound P01."
+          }
+        },
+        "required": [
+          "id_token"
+        ],
+        "additionalProperties": false
+      },
+      "Auth": {
+        "type": "object",
+        "properties": {
+          "access_token": {
+            "type": "string",
+            "minLength": 1
+          },
+          "token_type": {
+            "type": "string",
+            "enum": [
+              "Bearer"
+            ]
+          },
+          "expires_in": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 900
+          },
+          "user": {
+            "$ref": "#/components/schemas/User"
+          },
+          "onboarding_completed": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "access_token",
+          "token_type",
+          "expires_in",
+          "user",
+          "onboarding_completed"
+        ],
+        "additionalProperties": false,
+        "description": "expires_in is capped at the original app-session expiry; refresh never extends the 30-day lifetime. display_name may be null (P03); openid-only login must not fabricate a name."
+      },
+      "VehicleCreate": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "km_per_liter": {
+            "$ref": "#/components/schemas/Efficiency"
+          },
+          "fuel_price_per_liter": {
+            "$ref": "#/components/schemas/FuelPrice"
+          },
+          "maintenance_reserve_per_km": {
+            "$ref": "#/components/schemas/Reserve"
+          },
+          "is_default": {
+            "type": "boolean",
+            "const": true,
+            "default": true
+          }
+        },
+        "required": [
+          "name",
+          "km_per_liter",
+          "fuel_price_per_liter",
+          "maintenance_reserve_per_km"
+        ],
+        "additionalProperties": false
+      },
+      "VehiclePatch": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "km_per_liter": {
+            "$ref": "#/components/schemas/Efficiency"
+          },
+          "fuel_price_per_liter": {
+            "$ref": "#/components/schemas/FuelPrice"
+          },
+          "maintenance_reserve_per_km": {
+            "$ref": "#/components/schemas/Reserve"
+          },
+          "is_default": {
+            "type": "boolean",
+            "const": true,
+            "default": true
+          }
+        },
+        "required": [],
+        "additionalProperties": false,
+        "minProperties": 1,
+        "description": "P04: partial object; omitted fields retained, null/empty object rejected. is_default may only be true."
+      },
+      "Vehicle": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "name": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "km_per_liter": {
+            "$ref": "#/components/schemas/Efficiency"
+          },
+          "fuel_price_per_liter": {
+            "$ref": "#/components/schemas/FuelPrice"
+          },
+          "maintenance_reserve_per_km": {
+            "$ref": "#/components/schemas/Reserve"
+          },
+          "is_default": {
+            "type": "boolean",
+            "const": true,
+            "default": true
+          }
+        },
+        "required": [
+          "id",
+          "name",
+          "km_per_liter",
+          "fuel_price_per_liter",
+          "maintenance_reserve_per_km",
+          "is_default"
+        ],
+        "additionalProperties": false
+      },
+      "Income": {
+        "type": "object",
+        "properties": {
+          "platform_code": {
+            "$ref": "#/components/schemas/PlatformCode"
+          },
+          "gross_income": {
+            "$ref": "#/components/schemas/MoneyInput"
+          }
+        },
+        "required": [
+          "platform_code",
+          "gross_income"
+        ],
+        "additionalProperties": false
+      },
+      "Expense": {
+        "type": "object",
+        "properties": {
+          "category": {
+            "type": "string",
+            "enum": [
+              "parking",
+              "toll",
+              "phone",
+              "other"
+            ]
+          },
+          "amount": {
+            "$ref": "#/components/schemas/MoneyInput"
+          },
+          "note": {
+            "$ref": "#/components/schemas/Note"
+          }
+        },
+        "required": [
+          "category",
+          "amount"
+        ],
+        "additionalProperties": false
+      },
+      "SessionCreate": {
+        "type": "object",
+        "properties": {
+          "work_date": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "vehicle_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "distance_km": {
+            "$ref": "#/components/schemas/Distance"
+          },
+          "working_hours": {
+            "$ref": "#/components/schemas/Hours"
+          },
+          "incomes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Income"
+            },
+            "minItems": 1,
+            "maxItems": 4,
+            "description": "Unique platform_code, not merely unique whole rows. New codes must be active; saved inactive codes may remain on edit."
+          },
+          "expenses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Expense"
+            },
+            "maxItems": 100,
+            "default": [],
+            "description": "P01: <=100 rows. No actual fuel entries."
+          },
+          "note": {
+            "$ref": "#/components/schemas/Note"
+          }
+        },
+        "required": [
+          "work_date",
+          "vehicle_id",
+          "distance_km",
+          "working_hours",
+          "incomes"
+        ],
+        "additionalProperties": false
+      },
+      "SessionPatch": {
+        "type": "object",
+        "properties": {
+          "distance_km": {
+            "$ref": "#/components/schemas/Distance"
+          },
+          "working_hours": {
+            "$ref": "#/components/schemas/Hours"
+          },
+          "incomes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Income"
+            },
+            "minItems": 1,
+            "maxItems": 4,
+            "description": "Unique platform_code, not merely unique whole rows. New codes must be active; saved inactive codes may remain on edit."
+          },
+          "expenses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Expense"
+            },
+            "maxItems": 100,
+            "default": [],
+            "description": "P01: <=100 rows. No actual fuel entries."
+          },
+          "note": {
+            "$ref": "#/components/schemas/Note"
+          }
+        },
+        "required": [],
+        "additionalProperties": false,
+        "minProperties": 1,
+        "description": "P04: at least one field; omitted retains value, provided arrays replace completely. expenses:[] clears; incomes:[] invalid. null rejected; note:\"\" clears. Date, vehicle and snapshot cannot be supplied. Frontend edit adapter must strip work_date and vehicle_id."
+      },
+      "Summary": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "currency": {
+            "type": "string",
+            "enum": [
+              "THB"
+            ]
+          },
+          "gross_income": {
+            "$ref": "#/components/schemas/NonnegativeAmount"
+          },
+          "costs": {
+            "type": "object",
+            "properties": {
+              "fuel_estimated": {
+                "$ref": "#/components/schemas/NonnegativeAmount"
+              },
+              "maintenance_reserve": {
+                "$ref": "#/components/schemas/NonnegativeAmount"
+              },
+              "other_actual": {
+                "$ref": "#/components/schemas/NonnegativeAmount"
+              }
+            },
+            "required": [
+              "fuel_estimated",
+              "maintenance_reserve",
+              "other_actual"
+            ],
+            "additionalProperties": false
+          },
+          "total_cost": {
+            "$ref": "#/components/schemas/NonnegativeAmount"
+          },
+          "estimated_net_profit": {
+            "$ref": "#/components/schemas/SignedAmount"
+          },
+          "distance_km": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]{2}$"
+          },
+          "working_hours": {
+            "type": "string",
+            "pattern": "^[0-9]+\\.[0-9]{2}$"
+          },
+          "estimated_net_per_km": {
+            "$ref": "#/components/schemas/NullableRate"
+          },
+          "estimated_net_per_hour": {
+            "$ref": "#/components/schemas/NullableRate"
+          }
+        },
+        "required": [
+          "date",
+          "currency",
+          "gross_income",
+          "costs",
+          "total_cost",
+          "estimated_net_profit",
+          "distance_km",
+          "working_hours",
+          "estimated_net_per_km",
+          "estimated_net_per_hour"
+        ],
+        "additionalProperties": false,
+        "description": "Map profit.Summary explicitly to these JSON field names. Calculate with exact decimal/rational arithmetic; round fuel and reserve separately half away from zero to two places, sum rounded costs, then net, then rates. No rounding of distance/efficiency intermediate."
+      },
+      "Preview": {
+        "type": "object",
+        "properties": {
+          "summary": {
+            "$ref": "#/components/schemas/Summary"
+          },
+          "preview_token": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "required": [
+          "summary",
+          "preview_token"
+        ],
+        "additionalProperties": false,
+        "description": "Signed opaque token binds verified user, normalized request, target/create or session ID+version, original cost snapshot and 15-minute expiry. Preview writes no financial records."
+      },
+      "Confirmation": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "summary": {
+            "$ref": "#/components/schemas/Summary"
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "summary"
+        ],
+        "additionalProperties": false,
+        "description": "Original API §6 minimal response. Not SavedDay: frontend must GET detail after confirmation (P06). JSON-safe integer version cap is provisional P01; never silently round a BIGINT."
+      },
+      "SavedDay": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "version": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 9007199254740991
+          },
+          "work_date": {
+            "$ref": "#/components/schemas/Date"
+          },
+          "vehicle_id": {
+            "$ref": "#/components/schemas/UUID"
+          },
+          "distance_km": {
+            "$ref": "#/components/schemas/Distance"
+          },
+          "working_hours": {
+            "$ref": "#/components/schemas/Hours"
+          },
+          "incomes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Income"
+            },
+            "minItems": 1,
+            "maxItems": 4,
+            "description": "Unique platform_code, not merely unique whole rows. New codes must be active; saved inactive codes may remain on edit."
+          },
+          "expenses": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Expense"
+            },
+            "maxItems": 100,
+            "default": [],
+            "description": "P01: <=100 rows. No actual fuel entries."
+          },
+          "note": {
+            "$ref": "#/components/schemas/Note"
+          },
+          "summary": {
+            "$ref": "#/components/schemas/Summary"
+          }
+        },
+        "required": [
+          "id",
+          "version",
+          "work_date",
+          "vehicle_id",
+          "distance_km",
+          "working_hours",
+          "incomes",
+          "expenses",
+          "note",
+          "summary"
+        ],
+        "additionalProperties": false,
+        "description": "P02 exact read shape aligned to frontend SavedDay. Normalize absent DB notes to empty string; never expose user_id or mutable snapshot fields. Snapshot remains server-owned and is used for every read/edit calculation."
+      },
+      "PageMeta": {
+        "type": "object",
+        "properties": {
+          "page": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "page_size": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 100
+          },
+          "has_more": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "page",
+          "page_size",
+          "has_more"
+        ],
+        "additionalProperties": false,
+        "description": "P02: no total required; order by work_date DESC, id DESC; active records only, inclusive from/to. Default page=1, page_size=20, max=100."
+      },
+      "Detail": {
+        "oneOf": [
+          {
+            "type": "object",
+            "properties": {
+              "field": {
+                "type": "string"
+              },
+              "code": {
+                "type": "string"
+              },
+              "message": {
+                "type": "string"
+              }
+            },
+            "required": [
+              "field",
+              "code",
+              "message"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "session_id": {
+                "$ref": "#/components/schemas/UUID"
+              }
+            },
+            "required": [
+              "session_id"
+            ],
+            "additionalProperties": false
+          },
+          {
+            "type": "object",
+            "properties": {
+              "reason": {
+                "type": "string",
+                "enum": [
+                  "VERSION_CHANGED",
+                  "COST_CHANGED",
+                  "EXPIRED",
+                  "INPUT_CHANGED",
+                  "TARGET_CHANGED",
+                  "INVALID_TOKEN"
+                ]
+              }
+            },
+            "required": [
+              "reason"
+            ],
+            "additionalProperties": false
+          }
+        ]
+      },
+      "Error": {
+        "type": "object",
+        "properties": {
+          "error": {
+            "type": "object",
+            "properties": {
+              "code": {
+                "type": "string",
+                "enum": [
+                  "VALIDATION_ERROR",
+                  "VEHICLE_EXISTS",
+                  "SESSION_DATE_EXISTS",
+                  "PREVIEW_STALE",
+                  "IDEMPOTENCY_KEY_REUSED",
+                  "UNAUTHENTICATED",
+                  "ORIGIN_FORBIDDEN",
+                  "NOT_FOUND",
+                  "BAD_REQUEST",
+                  "RATE_LIMITED",
+                  "INTERNAL_ERROR",
+                  "SERVICE_UNAVAILABLE"
+                ]
+              },
+              "message": {
+                "type": "string"
+              },
+              "details": {
+                "type": "array",
+                "items": {
+                  "$ref": "#/components/schemas/Detail"
+                }
+              }
+            },
+            "required": [
+              "code",
+              "message",
+              "details"
+            ],
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "error"
+        ],
+        "additionalProperties": false,
+        "description": "P05 typed array retains original error.details array. Original five named codes preserved; generic codes/detail variants proposed. Validation field paths use incomes[0].gross_income etc. SESSION_DATE_EXISTS includes own session_id; version mismatch uses PREVIEW_STALE + VERSION_CHANGED, client must reload detail before new preview."
+      },
+      "AuthResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Auth"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "ProfileResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Profile"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "VehicleResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Vehicle"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "PreviewResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Preview"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "ConfirmationResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/Confirmation"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "SessionResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "$ref": "#/components/schemas/SavedDay"
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "VehiclesResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Vehicle"
+            },
+            "maxItems": 1
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "PlatformsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Platform"
+            }
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "additionalProperties": false
+      },
+      "SessionsResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SavedDay"
+            }
+          },
+          "meta": {
+            "$ref": "#/components/schemas/PageMeta"
+          }
+        },
+        "required": [
+          "data",
+          "meta"
+        ],
+        "additionalProperties": false
+      },
+      "DailyReportResponse": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "anyOf": [
+              {
+                "$ref": "#/components/schemas/Summary"
+              },
+              {
+                "type": "null"
+              }
+            ]
+          }
+        },
+        "required": [
+          "data"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "parameters": {
+      "vehicle_id": {
+        "name": "vehicle_id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/UUID"
+        }
+      },
+      "session_id": {
+        "name": "session_id",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/UUID"
+        }
+      },
+      "Origin": {
+        "name": "Origin",
+        "in": "header",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": "Must exactly equal configured WEB_APP_URL origin. Validate even on login/logout with missing cookies; forwarded Origin must be preserved by proxy."
+      },
+      "PreviewToken": {
+        "name": "X-Preview-Token",
+        "in": "header",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "minLength": 1
+        },
+        "description": "Original opaque preview token for unchanged confirmed input; reuse unchanged on retry."
+      },
+      "IdempotencyKey": {
+        "name": "Idempotency-Key",
+        "in": "header",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/UUID"
+        },
+        "description": "Per-user UUID per confirmation; 24-hour successful replay. New input/new preview requires new key."
+      },
+      "from": {
+        "name": "from",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "$ref": "#/components/schemas/Date"
+        }
+      },
+      "to": {
+        "name": "to",
+        "in": "query",
+        "required": false,
+        "schema": {
+          "$ref": "#/components/schemas/Date"
+        }
+      },
+      "date": {
+        "name": "date",
+        "in": "query",
+        "required": true,
+        "schema": {
+          "$ref": "#/components/schemas/Date"
+        }
+      },
+      "page": {
+        "name": "page",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 2147483647,
+          "default": 1
+        }
+      },
+      "page_size": {
+        "name": "page_size",
+        "in": "query",
+        "schema": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100,
+          "default": 20
+        }
+      }
+    },
+    "responses": {
+      "Error400": {
+        "description": "Proposed error; codes/details P05 unless already named in API §6. 404 must not reveal another user’s IDs.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "no-store"
+              ]
+            },
+            "description": "All financial/private and authentication responses must not be stored by shared caches."
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "error": {
+                "code": "BAD_REQUEST",
+                "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                "details": []
+              }
+            }
+          }
+        }
+      },
+      "Error401": {
+        "description": "Proposed error; codes/details P05 unless already named in API §6. 404 must not reveal another user’s IDs.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "no-store"
+              ]
+            },
+            "description": "All financial/private and authentication responses must not be stored by shared caches."
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "error": {
+                "code": "UNAUTHENTICATED",
+                "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                "details": []
+              }
+            }
+          }
+        }
+      },
+      "Error403": {
+        "description": "Proposed error; codes/details P05 unless already named in API §6. 404 must not reveal another user’s IDs.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "no-store"
+              ]
+            },
+            "description": "All financial/private and authentication responses must not be stored by shared caches."
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "error": {
+                "code": "ORIGIN_FORBIDDEN",
+                "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                "details": []
+              }
+            }
+          }
+        }
+      },
+      "Error404": {
+        "description": "Proposed error; codes/details P05 unless already named in API §6. 404 must not reveal another user’s IDs.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "no-store"
+              ]
+            },
+            "description": "All financial/private and authentication responses must not be stored by shared caches."
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "error": {
+                "code": "NOT_FOUND",
+                "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                "details": []
+              }
+            }
+          }
+        }
+      },
+      "Error409": {
+        "description": "Proposed error; codes/details P05 unless already named in API §6. 404 must not reveal another user’s IDs.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "no-store"
+              ]
+            },
+            "description": "All financial/private and authentication responses must not be stored by shared caches."
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "examples": {
+              "stale": {
+                "value": {
+                  "error": {
+                    "code": "PREVIEW_STALE",
+                    "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                    "details": [
+                      {
+                        "reason": "EXPIRED"
+                      }
+                    ]
+                  }
+                }
+              },
+              "versionChanged": {
+                "value": {
+                  "error": {
+                    "code": "PREVIEW_STALE",
+                    "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                    "details": [
+                      {
+                        "reason": "VERSION_CHANGED"
+                      }
+                    ]
+                  }
+                }
+              },
+              "dateExists": {
+                "value": {
+                  "error": {
+                    "code": "SESSION_DATE_EXISTS",
+                    "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                    "details": [
+                      {
+                        "session_id": "33333333-3333-4333-8333-333333333333"
+                      }
+                    ]
+                  }
+                }
+              },
+              "keyReused": {
+                "value": {
+                  "error": {
+                    "code": "IDEMPOTENCY_KEY_REUSED",
+                    "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                    "details": []
+                  }
+                }
+              },
+              "vehicleExists": {
+                "value": {
+                  "error": {
+                    "code": "VEHICLE_EXISTS",
+                    "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                    "details": []
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "Error422": {
+        "description": "Proposed error; codes/details P05 unless already named in API §6. 404 must not reveal another user’s IDs.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "no-store"
+              ]
+            },
+            "description": "All financial/private and authentication responses must not be stored by shared caches."
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "error": {
+                "code": "VALIDATION_ERROR",
+                "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                "details": [
+                  {
+                    "field": "working_hours",
+                    "code": "OUT_OF_RANGE",
+                    "message": "ชั่วโมงต้องอยู่ระหว่าง 0 ถึง 24"
+                  }
+                ]
+              }
+            }
+          }
+        }
+      },
+      "Error429": {
+        "description": "Proposed error; codes/details P05 unless already named in API §6. 404 must not reveal another user’s IDs.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "no-store"
+              ]
+            },
+            "description": "All financial/private and authentication responses must not be stored by shared caches."
+          },
+          "Retry-After": {
+            "schema": {
+              "type": "string",
+              "pattern": "^[0-9]+$"
+            },
+            "description": "P05 retry delay in seconds; never blindly repeat a changed confirmation."
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "error": {
+                "code": "RATE_LIMITED",
+                "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                "details": []
+              }
+            }
+          }
+        }
+      },
+      "Error500": {
+        "description": "Proposed error; codes/details P05 unless already named in API §6. 404 must not reveal another user’s IDs.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "no-store"
+              ]
+            },
+            "description": "All financial/private and authentication responses must not be stored by shared caches."
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "error": {
+                "code": "INTERNAL_ERROR",
+                "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                "details": []
+              }
+            }
+          }
+        }
+      },
+      "Error503": {
+        "description": "Proposed error; codes/details P05 unless already named in API §6. 404 must not reveal another user’s IDs.",
+        "headers": {
+          "Cache-Control": {
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "no-store"
+              ]
+            },
+            "description": "All financial/private and authentication responses must not be stored by shared caches."
+          }
+        },
+        "content": {
+          "application/json": {
+            "schema": {
+              "$ref": "#/components/schemas/Error"
+            },
+            "example": {
+              "error": {
+                "code": "SERVICE_UNAVAILABLE",
+                "message": "ข้อมูลตัวอย่างสำหรับทดสอบสัญญา",
+                "details": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "securitySchemes": {
+      "BearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT",
+        "description": "Verified app token includes user+app session ID; verify DB-backed session expiry/revocation on every request."
+      },
+      "RefreshCookie": {
+        "type": "apiKey",
+        "in": "cookie",
+        "name": "__Host-rydo_refresh",
+        "description": "Opaque random credential; store only hash; same-origin Secure HttpOnly cookie, no Domain. Never expose to JavaScript."
+      }
+    }
+  }
+}

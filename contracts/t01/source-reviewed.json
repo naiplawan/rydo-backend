@@ -1,0 +1,16 @@
+{
+  "rydo-backend/Task.md": "401cecba94e800f8331c8ac728c8d1a9e5486af32c4357fac284667424d0bbe2",
+  "rydo-backend/IMPLEMENTATION_PLAN.md": "fb5ec8e7be3f7a4653b0e9c169bce19241fedca0280c68dd4cdf753ae575048e",
+  "rydo-doc/04_API_SPECIFICATION.md": "d63670b103cb499b102a4d2bebc640765b71198b969672152de5f0051bc3025b",
+  "rydo-backend/db/migrations/000001_core.down.sql": "66377ffdab753fe0dd45d473815654a0ba865a1a9657e0fd7e06187e72d1836e",
+  "rydo-backend/db/migrations/000001_core.up.sql": "7911d3a4dfb6dc3519b85f8827099faad53c04d20c86261d3bb75657fa085869",
+  "rydo-backend/db/migrations/000002_session_vehicle_owner.down.sql": "b0f216b02cc5c941a71ce902b88e6071f5e10ff686222496a41d15a1a33c39e6",
+  "rydo-backend/db/migrations/000002_session_vehicle_owner.up.sql": "583969ed135ab127dd5b1190c10e9638eabf069be4b77213f85778fd7bf277bc",
+  "rydo-frontend/docs/04_API_CONTRACT.md": "1e38f489d380ab0573830aff16c2c40ec03cd552a42a1181aadb98787b1502f8",
+  "rydo-frontend/src/trial-data.ts": "9465b590254afe00f644f196eeec9a1b795cd8c752c6b13d764fdfb16089f12d",
+  "rydo-backend/cmd/rydo-api/main.go": "f663cccc36a6e650cda3548026d93a9d71e1679dc6c17b24a23b98142b7dc3be",
+  "rydo-backend/cmd/rydo-api/swagger/openapi.json": "887058eccf1c4486d90568fb7a4488ade00b5fed0e0f872506e358593d812922",
+  "rydo-backend/internal/profit/profit.go": "ebec46e046924e24d9dd090f8a02a2b0662336fba6b04111d2e45e91df4f3084",
+  "rydo-backend/db/migrations/000003_finite_workday_numbers.down.sql": "eed7775483fe09f2fa387193506554af35789c5bd246db6c1aaffdd5d558d900",
+  "rydo-backend/db/migrations/000003_finite_workday_numbers.up.sql": "a96c409fad97fc6a589f639897ddee7b66b79a7cf226d131ee07d448fcb56ada"
+}

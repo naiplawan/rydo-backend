@@ -1,0 +1,10 @@
+[
+  "rydo-doc/04_API_SPECIFICATION.md",
+  "rydo-backend/db/migrations/000001_core.down.sql",
+  "rydo-backend/db/migrations/000001_core.up.sql",
+  "rydo-backend/db/migrations/000002_session_vehicle_owner.down.sql",
+  "rydo-backend/db/migrations/000002_session_vehicle_owner.up.sql",
+  "rydo-backend/internal/profit/profit.go",
+  "rydo-backend/db/migrations/000003_finite_workday_numbers.down.sql",
+  "rydo-backend/db/migrations/000003_finite_workday_numbers.up.sql"
+]

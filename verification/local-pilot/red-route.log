@@ -1,0 +1,18 @@
+[GIN-debug] [WARNING] Running in "debug" mode. Switch to "release" mode in production.
+ - using env:	export GIN_MODE=release
+ - using code:	gin.SetMode(gin.ReleaseMode)
+
+[GIN-debug] GET    /swagger/                 --> rydo-backend/cmd/rydo-api.registerSwagger.func1 (1 handlers)
+[GIN-debug] GET    /swagger/index.html       --> rydo-backend/cmd/rydo-api.registerSwagger.func2 (1 handlers)
+[GIN-debug] GET    /swagger/openapi.json     --> rydo-backend/cmd/rydo-api.registerSwagger.func3 (1 handlers)
+[GIN-debug] GET    /swagger/swagger-ui.css   --> rydo-backend/cmd/rydo-api.registerSwagger.(*RouterGroup).StaticFileFS.func4 (1 handlers)
+[GIN-debug] HEAD   /swagger/swagger-ui.css   --> rydo-backend/cmd/rydo-api.registerSwagger.(*RouterGroup).StaticFileFS.func4 (1 handlers)
+[GIN-debug] GET    /swagger/swagger-ui-bundle.js --> rydo-backend/cmd/rydo-api.registerSwagger.(*RouterGroup).StaticFileFS.func5 (1 handlers)
+[GIN-debug] HEAD   /swagger/swagger-ui-bundle.js --> rydo-backend/cmd/rydo-api.registerSwagger.(*RouterGroup).StaticFileFS.func5 (1 handlers)
+[GIN-debug] GET    /health/live              --> rydo-backend/cmd/rydo-api.newRouter.func1 (1 handlers)
+[GIN-debug] GET    /health/ready             --> rydo-backend/cmd/rydo-api.newRouter.func2 (1 handlers)
+--- FAIL: TestPilotRouteRequiresAuthentication (0.00s)
+    pilot_test.go:15: GET /api/v1/me returned 404; want protected-route 401
+FAIL
+FAIL	rydo-backend/cmd/rydo-api	0.006s
+FAIL

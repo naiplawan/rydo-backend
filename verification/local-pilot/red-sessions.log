@@ -1,0 +1,9 @@
+--- FAIL: TestPreviewConfirmationReplayAndHistoricalSnapshot (0.01s)
+    integration_test.go:237: non JSON 404 /api/v1/sessions/preview: 404 page not found
+--- FAIL: TestConcurrentConfirmAndTransactionalRollback (0.01s)
+    integration_test.go:237: non JSON 404 /api/v1/sessions/preview: 404 page not found
+--- FAIL: TestStalePreviewAndInputValidation (0.01s)
+    integration_test.go:365: non JSON 404 /api/v1/sessions/preview: 404 page not found
+FAIL
+FAIL	rydo-backend/internal/pilot	0.997s
+FAIL

@@ -1,0 +1,15 @@
+{
+  "openapi": "PASS 3.1.0 structure + local refs",
+  "operations": 18,
+  "schema_example_checks": 218,
+  "case_count": 47,
+  "source_json_parsed": 10,
+  "source_pilot_examples_validated": 8,
+  "independent_decimal_checks": "PASS",
+  "unchanged_source_files": 13,
+  "runtime_schema_paths": [
+    "/health/live",
+    "/health/ready"
+  ],
+  "runtime_api_tests": "NOT RUN; proposed contract only"
+}

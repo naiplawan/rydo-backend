@@ -1,0 +1,7 @@
+--- FAIL: TestAuthenticationSessionAndOrigin (0.01s)
+    integration_test.go:184: non JSON 404 /api/v1/auth/line: 404 page not found
+--- FAIL: TestProfilesVehiclesAndOwnership (0.01s)
+    integration_test.go:210: non JSON 404 /api/v1/auth/line: 404 page not found
+FAIL
+FAIL	rydo-backend/internal/pilot	0.905s
+FAIL

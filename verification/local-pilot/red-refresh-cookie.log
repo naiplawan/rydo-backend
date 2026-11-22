@@ -1,0 +1,5 @@
+--- FAIL: TestRefreshSetsOnlyRemainingCookieLifetime (0.01s)
+    integration_test.go:558: refresh must preserve remaining original cookie lifetime
+FAIL
+FAIL	rydo-backend/internal/pilot	1.121s
+FAIL

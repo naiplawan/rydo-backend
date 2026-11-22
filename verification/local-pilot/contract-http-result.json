@@ -1,0 +1,27 @@
+{
+  "contract": "T01 accepted P01-P08",
+  "wire_checks": 204,
+  "http_responses": 143,
+  "successful_operations": 18,
+  "operations": [
+    "confirmCreate",
+    "confirmEdit",
+    "createVehicle",
+    "deleteSession",
+    "getDailyReport",
+    "getMe",
+    "getProfile",
+    "getSession",
+    "listPlatforms",
+    "listSessions",
+    "listVehicles",
+    "loginLine",
+    "logoutSession",
+    "patchVehicle",
+    "previewCreate",
+    "previewEdit",
+    "refreshSession",
+    "replaceProfile"
+  ],
+  "result": "PASS; real HTTP + private PostgreSQL; LINE transport is test-only double"
+}
